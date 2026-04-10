@@ -1,0 +1,50 @@
+@use 'variables' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $white;
+  box-shadow: $shadow-nav;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 77px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $text-dark;
+    transition: opacity 0.2s;
+
+    svg { flex-shrink: 0; }
+    &:hover { opacity: 0.85; }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @media (max-width: 768px) { display: none; }
+  }
+
+  &__nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-body;
+    transition: color 0.2s;
+
+    &:hover, &--active { color: $primary; }
+  }
+
+  &__cta {
+    @media (max-width: 768px) { display: none; }
+  }
+}

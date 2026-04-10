@@ -1,0 +1,21 @@
+{
+  "name": "med-website",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "minista",
+    "build": "minista build",
+    "preview": "minista preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "lucide-react": "^1.8.0",
+    "minista": "^4.0.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0",
+    "vite": "^6.4.2"
+  }
+}

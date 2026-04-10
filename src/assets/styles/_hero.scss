@@ -1,0 +1,68 @@
+@use 'variables' as *;
+
+.hero {
+  background: $white;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 620px;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      min-height: auto;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+  }
+
+  &__title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: $text-dark;
+    margin-bottom: 20px;
+
+    @media (max-width: 1024px) { font-size: 40px; }
+    @media (max-width: 768px)  { font-size: 32px; }
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 500px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__image-wrap {
+    flex-shrink: 0;
+    width: 500px;
+    height: 520px;
+    border-radius: $radius-lg;
+    overflow: hidden;
+
+    @media (max-width: 1200px) { width: 400px; height: 420px; }
+    @media (max-width: 768px)  { width: 100%; height: 280px; }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+}

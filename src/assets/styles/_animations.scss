@@ -1,0 +1,85 @@
+// ─── Keyframes ────────────────────────────────────────────────
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+// ─── Hero — запускается сразу при загрузке ─────────────────────
+.animate-fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.9s ease 0.2s both;
+}
+
+// ─── Scroll-reveal ─────────────────────────────────────────────
+// Начальное состояние (скрыто)
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--delay, 0ms);
+
+  // Когда JS добавляет класс .is-visible
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ─── Card hover ────────────────────────────────────────────────
+.services__card,
+.benefits__card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+  }
+}
+
+.testimonials__card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-color: #CBD5E1;
+  }
+}
+
+// ─── Button pulse on hero CTA ──────────────────────────────────
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.hero__actions .btn--primary {
+  animation: pulse-ring 2.4s ease-out 1.5s infinite;
+}
+
+// ─── Stat counter pop ──────────────────────────────────────────
+.about__stat-value {
+  transition: color 0.3s;
+}
+.about__stat:hover .about__stat-value {
+  color: #2563EB;
+}
+
+// ─── Icon wrap spin-once on card hover ─────────────────────────
+.services__card:hover .services__icon-wrap svg,
+.benefits__card:hover .benefits__icon-wrap svg {
+  animation: scaleIn 0.3s ease;
+}

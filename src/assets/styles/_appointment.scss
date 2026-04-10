@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.appointment {
+  background: $white;
+  padding: 80px 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  // Left side
+  &__title {
+    font-size: 36px;
+    font-weight: 800;
+    color: $text-dark;
+    line-height: 1.2;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) { font-size: 26px; }
+  }
+
+  &__desc {
+    font-size: 15px;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: $text-body;
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: $primary;
+    }
+  }
+
+  // Right side — form
+  &__form-card {
+    background: $white;
+    border: 1px solid $border;
+    border-radius: $radius-lg;
+    padding: 32px;
+    box-shadow: $shadow-card;
+  }
+
+  &__form-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 24px;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 500px) { grid-template-columns: 1fr; }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-dark;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+    font-size: 14px;
+    color: $text-body;
+    background: $white;
+    transition: border-color 0.2s;
+    outline: none;
+
+    &::placeholder { color: #A0AEC0; }
+    &:focus { border-color: $primary; }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+}

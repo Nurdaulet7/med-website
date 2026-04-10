@@ -1,0 +1,96 @@
+@use 'variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Offset anchor scroll for sticky header
+section[id] {
+  scroll-margin-top: 77px;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-body;
+  background: $white;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-px;
+
+  @media (max-width: 1280px) { padding: 0 40px; }
+  @media (max-width: 768px)  { padding: 0 20px; }
+}
+
+.section-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text-label;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: $radius-sm;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+
+  &--primary {
+    background: $primary;
+    color: $white;
+    &:hover { background: $primary-dark; }
+  }
+
+  &--outline {
+    background: transparent;
+    color: $text-dark;
+    border: 1.5px solid $border;
+    &:hover { background: $bg-light; }
+  }
+
+  &--lg {
+    padding: 13px 28px;
+    font-size: 15px;
+  }
+
+  &--full {
+    width: 100%;
+    justify-content: center;
+  }
+}
