@@ -1,5 +1,5 @@
 import { Calendar, ChevronRight } from 'lucide-react'
-import heroDoctorImg from '../assets/images/hero-doctor.png'
+import heroDoctorImg from '../assets/images/hero-doctor.webp'
 
 export default function Hero() {
   return (

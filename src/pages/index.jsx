@@ -1,5 +1,4 @@
 import '../assets/styles/global.scss'
-import '../assets/scripts/main.js'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'

@@ -1,4 +1,4 @@
-import aboutDoctorImg from '../assets/images/about-doctor.png'
+import aboutDoctorImg from '../assets/images/about-doctor.webp'
 
 const stats = [
   { value: '15+',     label: 'Лет опыта' },

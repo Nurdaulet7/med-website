@@ -46,7 +46,7 @@
         <div class="container">
           <div class="hero__inner">
             <div class="hero__content animate-fade-up">
-              <h1 class="hero__title">Ваше здоровье —<br>наш приоритет</h1>
+              <h1 class="hero__title">Ваше здоровье -<br>наш приоритет</h1>
               <p class="hero__desc">Персонализированная, внимательная медицинская помощь, созданная вокруг вас. Хамзабек сочетает передовую медицину с искренней заботой, чтобы вы жили полноценной и здоровой жизнью.</p>
               <div class="hero__actions">
                 <a href="#appointment" class="btn btn--primary btn--lg">
@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="hero__image-wrap animate-fade-in">
-              <img src="/assets/hero-doctor-CvqhLoxX.png" alt="Биржан Хамзабек">
+              <img src="/assets/hero-doctor-BQpfyVJf.webp" alt="Биржан Хамзабек">
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="container">
           <div class="about__inner">
             <div class="about__image-wrap reveal">
-              <img src="/assets/about-doctor-D790UUho.png" alt="Биржан Хамзабек">
+              <img src="/assets/about-doctor-Bsrzn0sS.webp" alt="Биржан Хамзабек">
             </div>
             <div class="about__content reveal"><span class="section-label">О докторе Хамзабеке</span>
               <h2 class="about__title">Преданность исключительной заботе о пациентах</h2>
@@ -448,5 +448,22 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          obs.observe(el);
+        });
+      });
+    </script>
   </body>
 </html>
